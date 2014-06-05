@@ -1,4 +1,28 @@
 @font-face {
+	font-family: 'ico-home';
+	src:url('../font/ico_home/fonts/icomoon.eot?-gsgkr9');
+	src:url('../font/ico_home/fonts/icomoon.eot?#iefix-gsgkr9') format('embedded-opentype'),
+		url('../font/ico_home/fonts/icomoon.woff?-gsgkr9') format('woff'),
+		url('../font/ico_home/fonts/icomoon.ttf?-gsgkr9') format('truetype'),
+		url('../font/ico_home/fonts/icomoon.svg?-gsgkr9#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'ico-home';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@font-face {
 	font-family: 'icomoon';
 	src:url('../font/icomoon/icomoon.eot?-g6be4r');
 	src:url('../font/icomoon/icomoon.eot?#iefix-g6be4r') format('embedded-opentype'),
@@ -24,19 +48,83 @@
 }
 @font-face
 {
-	font-family: pacifico;
+	font-family: "pacifico";
 	src: url(../font/Pacifico.ttf);
 }
 @font-face
 {
-	font-family: folks;
+	font-family: "folks";
 	src: url(../font/Folks.ttf);
 }
-/*************************************************************************************************/
 
+@media screen and (min-width:769px){ 
+	header 
+	{
+		padding-bottom: .5em;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	header hgroup
+	{
+		background: rgb(89,90,91);
+		padding-bottom: .5em;
+	}
+	header h1
+	{
+		font-family: "folks";
+		font-size: 2.5em;
+		margin: 0;
+		padding: 0;
+	}
+	header h6
+	{
+		font-family: "pacifico";
+		font-size: 1.5em;
+		margin: 0;
+		padding: 0;
+	}
+	#menu-movil
+	{
+		display: none;
+	}
+	#menu-principal
+	{
+		display: block;
+		background: #8e9295;
+		margin-top: 6.6em;
+		padding: 0;
+	}
+	#menu-principal ul
+	{
+		list-style-type: none;
+		text-align: center;
+	}
+	#menu-principal ul li
+	{
+		display: inline-block;
+		margin-right: 5em;
+		padding: .75em 0;
+		text-decoration: none;
+	}
+	#menu-principal ul li a
+	{
+		color: #fff;
+		font-size: 1em;
+	}
+	.fondo-azul
+	{		
+		background: #8e9295;
+		color: #fff;
+	}
+}
+/******************************************************************************/
 @media screen and (max-width:768px){ 
 	#indicador
 	{
+		background: red;
 		position: absolute;
 		bottom: 0;
 	}
@@ -45,18 +133,39 @@
 		background: #fff;
 		font-size: 1.15em;
 	}
+	body p#boton-inicio
+	{
+		font-size: .8em;
+		left: -.2em;
+		font-size: 2em;
+		position: fixed;
+		text-align: center;
+		top: -.6em;
+		width: 30%;
+		z-index: 2;
+	}
+	body p#boton-inicio:before 
+	{
+		color: #fff;
+		content: "\e604";
+		font-family: "ico-home";
+	}
 	body p#boton-menu
 	{
+		font-size: .8em;
+		right: -1em;
 		font-size: 2em;
-		left: .1em;
+		padding-right: .85em;
 		position: fixed;
-		top: -1em;
+		text-align: center;
+		top: -.6em;
+		width: 30%;
 		z-index: 2;
 	}
 	body p#boton-menu:before 
 	{
 		color: #fff;
-		content: "\e602";
+		content: "\e603";
 		font-family: "icomoon";
 	}
 	div#contenido
@@ -65,40 +174,43 @@
 	}
 	header
 	{
-		background: #B1C5EA;
+		background: #8e9295;
 		color: #fff;
 		position: fixed;
+		text-align: center;
 		top: 0;
 		width: 100%;
 		z-index: 1;
 	}
 	header hgroup
 	{
-		height: 5em;
-		width: 100%;
+		background: #4c4c4c;
+		height: 3.5em;
+		margin: 0 auto;
+		opacity: .8;
+		width: 50%;
 	}
 	header hgroup h1
-	{
+	{		
+		display: block;
 		font-family: "folks";
-		font-size: .9em;
-		position: fixed;
-		text-align: right;
-		top: 2em;
-		width: 85%;
+		font-size: .8em;
+		margin: 0 auto;
+		width: 100%;
 	}
 	header hgroup h6
 	{
+		display: block;
 		font-family: "pacifico";
-		font-size: .8em;
-		margin-left: 3.25em;
-		position: fixed;
-		top: -2em;
+		font-size: 1em;
+		margin: 0 auto;
+		width: 100%;
 	}
 	nav#menu-movil
 	{
-		background: #4c4c4c;
+		background: #B1C5EA;
 		color: #fff;
-		display: ;
+		display: none;
 		margin-top: 1em;
 		position: fixed;
 		width: 80%;
@@ -131,5 +243,67 @@
 	nav#menu-principal
 	{
 		display: none;
+	}
+}
+
+/*************************************************************************************************/
+
+@media screen and (max-width:320px){ 
+	body p#boton-inicio
+	{
+		font-size: .8em;
+		left: -.2em;
+		position: fixed;
+		text-align: center;
+		top: -.2em;
+		width: 30%;
+		z-index: 2;
+	}
+	body p#boton-inicio:before 
+	{
+		color: #fff;
+		content: "\e604";
+		font-family: "ico-home";
+	}
+	body p#boton-menu
+	{
+		font-size: .8em;
+		right: 0;
+		padding-right: .85em;
+		position: fixed;
+		text-align: right;
+		top: -.2em;
+		width: 30%;
+		z-index: 2;
+	}
+	body p#boton-menu:before 
+	{
+		color: #fff;
+		content: "\e603";
+		font-family: "icomoon";
+	}
+	header hgroup
+	{
+		background: #4c4c4c;
+		height: 2em;
+		margin: 0 auto;
+		opacity: .8;
+		width: 50%;
+	}
+	header hgroup h1
+	{		
+		display: block;
+		font-family: "folks";
+		font-size: .4em;
+		margin: 0 auto;
+		width: 100%;
+	}
+	header hgroup h6
+	{
+		display: block;
+		font-family: "pacifico";
+		font-size: .6em;
+		margin: 0 auto;
+		width: 100%;
 	}
 }
